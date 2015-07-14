@@ -11,11 +11,11 @@ Part of nanoservice docker image library.
       nanoservice/protobuf --help
 
     # Use current folder for input and output
-    docker run -it --rm -v .:/src:rw \
+    docker run -it --rm -v $PWD:/src:rw \
       nanoservice/protobuf --cpp_out=. *.proto
 
-    # If you ran into problems with user uid
-    docker run -it --rm -v .:/user-src:rw -u $(id -u) -w /user-src \
+    # If you ran into problems with user uid and gid (consider scripting it)
+    docker run -it --rm -v $PWD:/user-src:rw -u $(id -u):$(id -g) -w /user-src \
       nanoservice/protobuf --cpp_out=. *.proto
 
 ## Contributing
