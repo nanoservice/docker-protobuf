@@ -23,4 +23,4 @@ apk del $PACKAGES
 
 apk add --update libstdc++
 
-rm -rf /var/cache/apk
+apk cache clean
