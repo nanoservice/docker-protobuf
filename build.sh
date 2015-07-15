@@ -22,5 +22,3 @@ rm -rf ./protobuf
 apk del $PACKAGES
 
 apk add --update libstdc++
-
-apk cache clean
